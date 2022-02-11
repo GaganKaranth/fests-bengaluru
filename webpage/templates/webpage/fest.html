@@ -1,0 +1,14 @@
+{%extends 'webpage/base.html'%}
+{%block content%}
+<div class='container-fest'>
+        {%for fest in fests%}
+        <div class='card-fest'>
+                <img style="width:100%;height:200px;border-radius:25px;" src='{{fest.image.url}}'>
+                <div style="font-weight: 600; margin-top:10px;font-size: 20px;">{{fest.name}}</div>
+                <div style="font-size: 16px;">{{fest.start_date}} - {{fest.end_date}}</div>
+                <div style="margin:15px 0 20px 0;">{{fest.fest_desc}}</div>
+                <a href="{% url 'event-fest' value=fest.id%}"><button class='register-button'>Register for Events</button></a>
+        </div>
+        {%endfor%}
+</div>
+{%endblock content%}

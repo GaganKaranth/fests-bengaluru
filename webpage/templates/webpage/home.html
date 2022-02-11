@@ -1,0 +1,22 @@
+{%extends 'webpage/base.html'%}
+{%block content%}
+<h2 style='margin:5px 0 0 15px'><u>Upcoming Events</u></h2>
+<div class='container'>
+        
+        {%for fest in fests%}
+        <div class='card'>
+                <img style="height:170px;border-radius:25px;min-width: 200px;" src='{{fest.image.url}}'>
+                <div style="font-weight: 600; margin-top:10px;font-size: 20px;">{{fest.name}}</div>
+                <div style="font-size: 16px;">{{fest.start_date}} - {{fest.end_date}}</div>
+                <div style="margin:15px 0 10px 0;">{{fest.fest_desc}}</div>
+                <a href="{% url 'event-fest' value=fest.id%}"><button class='register-button'>Register for Events</button></a>
+        </div>
+        {%endfor%}
+</div>
+<div>
+        <a href="{% url 'fest' type='COL'%}"><img class='click-img' src='media/college.jpg'></a>
+        <a href="{% url 'fest' type='TEC'%}"><img class='click-img' src='media/tec.jfif'></a>
+        <a href="{% url 'fest' type='CUL'%}"><img class='click-img' src='media/cul.jfif'></a>
+        <a href="{% url 'fest' type='SPO'%}"><img class='click-img' src='media/spo.png'></a>
+</div>
+{%endblock content%}

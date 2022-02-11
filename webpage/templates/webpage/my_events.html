@@ -1,0 +1,20 @@
+{%extends 'webpage/base.html'%}
+{%block content%}
+<h2 style="margin:5px 30px;"><u>My Event History</u></h2>
+<div style="margin:50px 0px 0px 270px" class='table'>
+    <table border='5'>
+        <tr>
+            <th>Event</th>
+            <th>Fest</th>
+            <th>College</th>
+        </tr>
+        {% for item in history %}
+            <tr>
+                <td>{{item.event}}</td>
+                <td>{{item.fest}}</td>
+                <td>{{item.college}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{%endblock content%} 
